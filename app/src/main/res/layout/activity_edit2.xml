@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#C0C0C0"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="10dp"
+        >
+
+
+        <ImageButton
+
+            android:background="@null"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+
+            android:src="@drawable/xicon"
+
+            android:id="@+id/xId"
+
+            />
+
+        <ImageButton
+
+            android:background="@null"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+
+            android:src="@drawable/shareicon"
+
+            android:id="@+id/shareId"
+            />
+
+    </RelativeLayout>
+
+
+
+    <RelativeLayout
+
+
+        android:layout_marginBottom="138dp"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:background="@null"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+
+            android:src="@drawable/stampicon"
+
+            android:id="@+id/stampId"
+
+            />
+
+        <ImageButton
+
+            android:background="@null"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+
+            android:src="@drawable/saveicon"
+
+            android:id="@+id/saveId"
+
+            />
+
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+
+        android:layout_marginBottom="8dp"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <ImageButton
+            android:background="@null"
+
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+
+            android:src="@drawable/style1"
+
+            android:id="@+id/style1Id"
+
+            />
+
+        <ImageButton
+
+            android:background="@null"
+
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="114dp"
+
+            android:src="@drawable/style2"
+
+            android:id="@+id/style2Id"
+
+            />
+
+        <ImageButton
+
+            android:background="@null"
+
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="211dp"
+
+            android:src="@drawable/style3"
+
+            android:id="@+id/style3Id"
+
+            />
+
+        <ImageButton
+
+            android:background="@null"
+
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="308dp"
+
+            android:src="@drawable/style4"
+
+            android:id="@+id/style4Id"
+
+            />
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

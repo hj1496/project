@@ -18,17 +18,19 @@
         ></ImageView>
 
     <ImageButton
-        android:background="@null"
+        android:id="@+id/camId"
         android:layout_width="80dp"
         android:layout_height="60dp"
-        android:src="@drawable/camerabutton"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"
-        android:layout_margin="170dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="170dp"
 
-        android:id="@+id/camId"
+        android:layout_marginTop="170dp"
 
-        ></ImageButton>
+        android:layout_marginEnd="170dp"
+        android:layout_marginBottom="170dp"
+        android:background="@null"
+        android:src="@drawable/camerabutton"></ImageButton>
 
 
 </RelativeLayout>

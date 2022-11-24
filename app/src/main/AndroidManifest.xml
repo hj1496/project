@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:tools="http://schemas.android.com/tools" >
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/><!-- 파일 쓰기 권한-->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/><!-- 파일 읽기 권한-->
+    <uses-permission android:name="android.permission.CAMERA"/><!-- 카메라 권한-->
+    <uses-feature android:name="android.hardware.camera" android:required="true"/> <!-- 카메라 기능 사용 검사-->
+
 
     <application
         android:allowBackup="true"
@@ -11,24 +17,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Project"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".EditActivity2"
-            android:exported="false">
+            android:name=".Camera"
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
-            android:name=".EditActivity"
-            android:exported="false">
+            android:name=".Editing"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".Cuting"
+            android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

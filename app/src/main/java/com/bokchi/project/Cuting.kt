@@ -3,9 +3,9 @@ package com.bokchi.project
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class EditActivity : AppCompatActivity() {
+class Cuting : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_edit_activtiy)
+        setContentView(R.layout.activity_cuting)
     }
 }

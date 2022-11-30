@@ -2,13 +2,18 @@ package com.bokchi.project
 
 import android.Manifest
 import android.content.Intent
+import android.graphics.Bitmap
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
 import android.provider.ContactsContract
 import android.provider.MediaStore
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.activity.result.ActivityResultLauncher
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.FileProvider
 import com.bokchi.project.databinding.ActivityCameraBinding
 import com.bokchi.project.databinding.ActivityMainBinding
@@ -21,50 +26,50 @@ import java.util.Date
 
 class Camera : AppCompatActivity() {
 
-    val REQUEST_IMAGE_CAPTURE = 1 //카메라 촬영 요청 코드
-    lateinit var currentPhotoPath: String //문자열 형태 사진 경로 값
+
     lateinit var binding : ActivityCameraBinding//뷰바인딩
-    
+    lateinit var bitmap: Bitmap
+    lateinit var imageView: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_camera)
+        binding =ActivityCameraBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         setPermission() // 권한체크 메소드
 
-        binding.takeAPictureId.setOnClickListener { 
-            takeCapture() // 기본 카메라 앱을 실행하여 사진 촬영
+        imageView = binding.imageViewId
+        val picBtn: Button = binding.takeAPictureId
+
+        //촬영 이벤트
+        picBtn.setOnClickListener {
+            val intent: Intent = Intent(MediaStore. ACTION_IMAGE_CAPTURE)
+            activiteResult.launch(intent)
         }
+
+
+
+        //이미지 클릭시 다음 editing 화면 이동
+        imageView.setOnClickListener{
+            val intent: Intent = Intent(applicationContext, Editing::class.java)
+            intent.apply { this.putExtra("bitmap_img", bitmap) }
+
+            startActivity(intent)
+        }
+
     }
 
-    // 사진 촬영
-    private fun takeCapture() {
-        // 기본 카메라 앱 실행
-        Intent(MediaStore.ACTION_IMAGE_CAPTURE).also{takePictureIntent ->
-            takePictureIntent.resolveActivity(packageManager)?.also{
-                val photoFile: File? = try{
-                    createImageFile()
-                }catch (ex: IOException){
-                    null
-                }
-                photoFile?.also {
-                    val photoURI: Uri = FileProvider.getUriForFile(
-                        this,
-                        "com.bokchi.project.fileprovider",
-                        it
-                    )
-                    takePictureIntent.putExtra(MediaStore.EXTRA_OUTPUT, photoURI)
-                    //startActivityForResult가 deprecated 되어 registerForActivityResult를 사용해야한다...
-                }
-            }
-        }
-    }
+    //결과 가져오기
+    private val activiteResult: ActivityResultLauncher<Intent> = registerForActivityResult(
+        ActivityResultContracts.StartActivityForResult()){
 
-    // 이미지 파일 생성
-    private fun createImageFile(): File {
-        val timestamp: String = SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
-        val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
-        return File.createTempFile("JPEG_${timestamp}_", ".jpg", storageDir)
-            .apply { currentPhotoPath = absolutePath }
+        if(it.resultCode == RESULT_OK && it.data != null){
+            //값 담기
+            val extras = it.data!!.extras
+            bitmap = extras?.get("data") as Bitmap
+            imageView.setImageBitmap(bitmap)
+        }
+
     }
 
     // 테트 퍼미션 설정
@@ -86,7 +91,7 @@ class Camera : AppCompatActivity() {
             .setPermissionListener(permission)
             .setRationaleMessage("카메라 앱을 사용하시려면 권한을 허용해주세요.")
             .setDeniedMessage("권한을 거부하셨습니다. [앱 설정] -> [권한] 항목에서 허용해주세요.")
-            .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CAMERA)
+            .setPermissions(Manifest.permission.WRITE_EXTERNAL_STORAGE, android.Manifest.permission.CAMERA)
             .check()
 
     }

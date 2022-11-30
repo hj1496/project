@@ -15,9 +15,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.camId.setOnClickListener {
-            val intent = Intent(this, Camera::class.java)
+
+            val intent: Intent = Intent(applicationContext, Camera::class.java)
             startActivity(intent)
         }
+
 
     }
 }

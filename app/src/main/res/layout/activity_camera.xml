@@ -20,7 +20,9 @@
         android:id="@+id/imageViewId"
         android:layout_width="405dp"
         android:layout_height="525dp"
-        tools:layout_editor_absoluteX="5dp"
-        tools:layout_editor_absoluteY="4dp"
+        app:layout_constraintBottom_toTopOf="@+id/takeAPictureId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

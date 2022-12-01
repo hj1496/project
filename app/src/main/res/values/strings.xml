@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">project</string>
+    <string name="date_str">31</string>
+    <string name="month_str">10</string>
+    <string name="year_str" >2022</string>
+    <string name="hour_str">12</string>
+    <string name="minute_str">34</string>
+    <string name="Merdiem_str">AM</string>
 </resources>

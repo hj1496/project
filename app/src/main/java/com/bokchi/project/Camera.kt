@@ -48,7 +48,6 @@ class Camera : AppCompatActivity() {
         }
 
 
-
         //이미지 클릭시 다음 editing 화면 이동
         imageView.setOnClickListener{
             val intent: Intent = Intent(applicationContext, Editing::class.java)

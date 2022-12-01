@@ -1,0 +1,457 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#C0C0C0"
+    tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/RelativeLayoutBottom"
+        android:layout_below="@+id/RelativeLayoutTop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="115dp"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutPic1"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_above="@+id/RelativeLayoutBottom"
+        android:layout_below="@+id/RelativeLayoutTop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="115dp"
+        android:background="#C0C0C0"
+        tools:context=".MainActivity"
+        tools:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textViewMinute1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="50dp"
+            android:layout_toEndOf="@+id/textViewHour1"
+            android:text="@string/minute_str"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/textViewHour1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="50dp"
+            android:text="@string/hour_str"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/textViewDate1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="100dp"
+            android:layout_toEndOf="@+id/textViewMonth1"
+            android:text="@string/date_str"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textViewMonth1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="100dp"
+            android:layout_toEndOf="@+id/textViewYear1"
+            android:text="@string/month_str"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textViewYear1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="100dp"
+            android:text="@string/year_str"
+            android:textSize="50sp" />
+
+        <TextView
+            android:id="@+id/textViewMeridiem1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="50dp"
+            android:layout_toEndOf="@+id/textViewMinute1"
+            android:text="@string/Merdiem_str"
+            android:textSize="40sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutPic2"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_above="@+id/RelativeLayoutBottom"
+        android:layout_below="@+id/RelativeLayoutTop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="115dp"
+        android:background="#C0C0C0"
+        tools:context=".MainActivity"
+        tools:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textViewDate2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="45dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/date_str"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewYear2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toStartOf="@+id/textViewMonth2"
+            android:text="@string/year_str"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewMonth2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="0dp"
+            android:layout_toStartOf="@+id/textViewDate2"
+            android:text="@string/month_str"
+            android:textSize="40sp"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutPic4"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_above="@+id/RelativeLayoutBottom"
+        android:layout_below="@+id/RelativeLayoutTop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginBottom="115dp"
+        android:background="#C0C0C0"
+        tools:context=".MainActivity"
+        tools:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textViewDate4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/date_str"
+            android:textSize="80sp" />
+
+        <TextView
+            android:id="@+id/textViewYear4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/textViewMonth4"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="75dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/year_str"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/textViewMonth4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="58dp"
+            android:layout_marginBottom="0dp"
+            android:text="@string/month_str"
+            android:textSize="40sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutPic3"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_above="@+id/RelativeLayoutBottom"
+        android:layout_below="@+id/RelativeLayoutTop"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="115dp"
+        android:layout_marginEnd="81dp"
+        android:layout_marginBottom="115dp"
+        android:background="#C0C0C0"
+        tools:context=".MainActivity"
+        tools:visibility="invisible">
+
+        <TextView
+            android:id="@+id/textViewMinute3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginEnd="30dp"
+            android:text="@string/minute_str"
+            android:textSize="80sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewHour3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="60dp"
+            android:text="@string/hour_str"
+            android:textSize="80sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewDate3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="81dp"
+            android:layout_marginBottom="65dp"
+            android:text="@string/date_str"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/textViewMonth3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="81dp"
+            android:layout_marginBottom="65dp"
+            android:text="@string/month_str"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayoutTop"
+        android:layout_width="match_parent"
+        android:layout_height="67dp"
+        android:background="#FFFFFF"
+
+        android:elevation="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <ImageButton
+
+            android:id="@+id/xId"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+
+            android:background="@null"
+
+            android:src="@drawable/xicon"
+
+            />
+
+        <ImageButton
+
+            android:id="@+id/shareId"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+
+            android:background="@null"
+
+            android:src="@drawable/shareicon" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+
+
+        android:id="@+id/RelativeLayoutBottom"
+
+
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="138dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/stampId"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+
+            android:background="@null"
+
+            android:src="@drawable/stampicon"
+
+            />
+
+        <ImageButton
+
+            android:id="@+id/saveId"
+
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="12dp"
+
+            android:background="@null"
+
+            android:src="@drawable/saveicon"
+
+            />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+
+
+        android:layout_height="120dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="8dp"
+        android:background="#FFFFFF"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/style1Id"
+
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="17dp"
+
+            android:background="@null"
+
+            android:src="@drawable/style1"
+
+            />
+
+        <ImageButton
+
+            android:id="@+id/style2Id"
+
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="114dp"
+
+            android:background="@null"
+
+            android:src="@drawable/style2"
+
+            />
+
+        <ImageButton
+
+            android:id="@+id/style3Id"
+
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="211dp"
+
+            android:background="@null"
+
+            android:src="@drawable/style3"
+
+            />
+
+        <ImageButton
+
+            android:id="@+id/style4Id"
+
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="308dp"
+
+            android:background="@null"
+
+            android:src="@drawable/style4"
+
+            />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

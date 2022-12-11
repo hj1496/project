@@ -1,13 +1,12 @@
 package com.bokchi.project
 
 import android.content.ContentValues
-import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
+import android.graphics.Canvas
 import android.graphics.drawable.BitmapDrawable
 import android.media.MediaScannerConnection
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -16,14 +15,16 @@ import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
-import androidx.core.view.drawToBitmap
 import com.bokchi.project.databinding.ActivityEditingBinding
-import com.gun0912.tedpermission.provider.TedPermissionProvider.context
+import com.gun0912.tedpermission.provider.TedPermissionProvider
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream
 import java.io.IOException
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class Editing : AppCompatActivity() {
@@ -35,10 +36,16 @@ class Editing : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityEditingBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.imageViewId.setImageBitmap(intent.getParcelableExtra<Bitmap>("bitmap_img"))
+        binding.imageViewId2.setImageBitmap(intent.getParcelableExtra<Bitmap>("bitmap_img"))
 
-        val drawable = binding.imageViewId.drawable as BitmapDrawable
-       pbitmap = drawable.bitmap
+        val drawable = binding.imageViewId2.drawable as BitmapDrawable
+        pbitmap = drawable.bitmap
+
+
+
+        val capture_target_Layout =
+            binding.testLayoutId  //캡쳐할 영역의 레이아웃
+
 
         //메인으로 이동
         binding.xId.setOnClickListener {
@@ -47,11 +54,18 @@ class Editing : AppCompatActivity() {
         }
 
         binding.saveId.setOnClickListener{
-            imgSaveOnClick(binding.imageViewId)
+            imgSaveOnClick()
+        }
+
+
+        binding.stampId.setOnClickListener{
+            binding.DateId.bringToFront()//텍스트 뷰를 제일 위로
+           pbitmap = viewToBitmap(capture_target_Layout)
+
         }
     }
 
-    fun imgSaveOnClick(view: View) {
+    fun imgSaveOnClick() {
         val bitmap = pbitmap
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
@@ -148,7 +162,8 @@ class Editing : AppCompatActivity() {
             fos.close() // 파일 아웃풋 스트림 객체 close
 
 
-            MediaScannerConnection.scanFile(context, arrayOf(fileItem.toString()),
+            MediaScannerConnection.scanFile(
+                TedPermissionProvider.context, arrayOf(fileItem.toString()),
                 null, null)
             // 브로드캐스트 수신자에게 파일 미디어 스캔 액션 요청. 그리고 데이터로 추가된 파일에 Uri를 넘겨준다.
         } catch (e: FileNotFoundException) {
@@ -160,7 +175,14 @@ class Editing : AppCompatActivity() {
         }
     }
 
+    //뷰를 저장하는 함수
+    fun viewToBitmap(view: View): Bitmap {
+        val bitmap = Bitmap.createBitmap(view.width, view.height, Bitmap.Config.ARGB_8888)
+        val canvas = Canvas(bitmap)
+        view.draw(canvas)
+
+        return bitmap
+    }
 
 
-    
 }

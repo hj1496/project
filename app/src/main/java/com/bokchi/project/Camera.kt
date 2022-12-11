@@ -28,7 +28,7 @@ class Camera : AppCompatActivity() {
 
 
         imageView = binding.imageViewId
-        val picBtn: Button = binding.takeAPictureId
+        val picBtn= binding.takeAPictureId
 
         //촬영 이벤트
         picBtn.setOnClickListener {
@@ -37,8 +37,8 @@ class Camera : AppCompatActivity() {
         }
 
 
-        //이미지 클릭시 다음 editing 화면 이동
-        imageView.setOnClickListener{
+        //버튼 클릭시 다음 editing 화면 이동
+        binding.nextId.setOnClickListener{
             val intent: Intent = Intent(applicationContext, Editing::class.java)
             intent.apply { this.putExtra("bitmap_img", bitmap) }
 
